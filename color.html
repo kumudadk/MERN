@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Changer</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .color-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .color-box {
+        padding: 20px;
+        border: 2px solid #000;
+        background-color: white;
+      }
+
+      .color-name {
+        cursor: pointer;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="color-container">
+      <div class="color-box" id="colorBox">
+        <!-- Colors and their names will be added here -->
+      </div>
+    </div>
+
+    <script>
+      function changeBackgroundColor() {
+        // Initialize an array to store color names
+        const colorNames = [];
+
+        // Input four colors
+        for (let i = 0; i < 4; i++) {
+          const color = prompt(`Enter color ${i + 1}:`);
+
+          if (color) {
+            // Add color name to the array
+            colorNames.push(color);
+          }
+        }
+
+        // Display color names inside the color box
+        const colorBox = document.getElementById("colorBox");
+        colorNames.forEach((color) => {
+          const colorDiv = document.createElement("div");
+          colorDiv.className = "color-name";
+          colorDiv.textContent = color;
+          colorDiv.style.color = color; // Set text color to the chosen color
+
+          // Add click event to change background color
+          colorDiv.addEventListener("click", function () {
+            document.body.style.backgroundColor = color;
+          });
+
+          // Append the color name to the color box
+          colorBox.appendChild(colorDiv);
+        });
+      }
+
+      // Call the function when the page loads
+      changeBackgroundColor();
+    </script>
+  </body>
+</html>

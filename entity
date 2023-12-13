@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <p>
+    Hello How are &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; You
+  </p>
+  <h3>&copy; copyright All rights reserved</h3>
+
+  <pre>
+  <code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+      &lt;head&gt;
+        &lt;meta charset="UTF-8" /&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+        &lt;meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        /&gt;
+        &lt;title&gt;Images&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;img
+          src="https://codebeautify.org/img/nlogo.webp"
+          alt="logo"
+          height="100"
+          width="300"
+        /&gt;
+        <!-- alt - alternate text --&gt;
+
+         Hypertext Links or Menu --&gt;
+
+        &lt;a href="https://www.free-css.com/" target="_blank"&gt;Free CSS&lt;/a&gt;
+        &lt;a href="https://www.google.com/" target="_blank"&gt;Open Google&lt;/a&gt;
+        &lt;a href="Pages/About.html" target="_blank"&gt;About&lt;/a&gt;
+        &lt;a href="Pages/Contact.html" target="_blank"&gt;Contact&lt;/a&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/code&gt;
+  &lt;/pre&gt;
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Contact Contoso Conferencing</h1>
+    <p>Contoso Conferencing Ltd.</p>
+    <p>
+      123 South Street<br />
+      Somewhere<br />
+      Over There<br />
+      <em>USA</em>
+    </p>
+    <p>
+      <a href="mailto:contact@contoso.com"> contact@contoso.com</a>
+    </p>
+    <p>
+      If you would like to contact Contoso Conferencing, whether you're
+      interested in our services or in a conference we're currently organizing,
+      don't hesitate to contact us by using our enquiry form. (<strong
+        >Bold fields</strong
+      >
+      are required.)
+    </p>
+    <pre>
+   <form action="process.asp" method="post">
+     <label for="username">First Name</label>
+     <input type="text" name="firstname" id="firstname" />
+
+     <label for="password">password</label>
+     <input type="password" name="password" id="password" />
+     <!-- <br /> -->
+     <label for="">Choose language</label>
+     <input type="checkbox" name="HindiLang" id="HindiLang" /> Hindi
+     <input type="checkbox" name="EngLang" id="EngLang" /> English
+     <input type="checkbox" name="FrenchLang" id="FrenchLang" /> French
+
+     <!-- <br /> -->
+
+     <label for="">Choose payment</label>
+     <input type="radio" name="payment" id="payment" /> Visa
+     <input type="radio" name="payment" id="payment" /> Rupay
+     <input type="radio" name="payment" id="payment" /> Master Card
+
+      
+     <label for="">Comments</label>
+     <!-- <select name="" id=""></select> -->
+     <textarea name="Comments" id="Comments" cols="40" rows="10"></textarea>
+
+     <select name="country" id="country">
+       <option value="">Select Your Country</option>
+       <option value="india">INDIA</option>
+       <option value="usa">usa</option>
+       <option value="UK">UK</option>
+     </select>
+
+     <input type="submit">
+   </form>
+</pre>
+  </body>
+</html>

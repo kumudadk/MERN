@@ -1,0 +1,68 @@
+/* *{
+   margin: 0;
+   padding: 0;
+   color: blueviolet;
+} */
+/* element type selector */
+/* h1{
+   color : green;
+   font-size: 25;
+} */
+
+/* id selector */
+/* #thanksPara{
+   color : blue;
+}
+#meetPara{
+   color : brown;
+} */
+
+/* Descendant selector  */
+
+ul.menu {
+  list-style: none;
+}
+
+ul.menu li {
+  display: inline;
+}
+
+ul.menu li a {
+  text-decoration: none;
+  margin: 10px;
+}
+
+/* More selectors */
+
+/* Child Selector */
+ul > li {
+  list-style-type: square;
+}
+
+ul > li ol {
+  list-style: none;
+}
+
+/* Adjacent sibling selector  */
+
+/* - Both share same parent
+ - p tags that is immediately preceded by h1 */
+
+/* h1 + p{
+    color: coral;
+    font-size: 30px;
+ }
+ 
+ 
+ ul.task + p{
+    color: gold;
+ } */
+
+/* General sibling selector  */
+h1 ~ p {
+  color: purple;
+}
+
+ul.task ~ p {
+  color: red;
+}

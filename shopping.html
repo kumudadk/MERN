@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List App</title>
+    <style>
+      /* Some basic styling for better presentation */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+      }
+      .column {
+        flex: 1;
+        margin-right: 20px;
+      }
+      input,
+      button {
+        margin-bottom: 10px;
+      }
+      #commonItems {
+        margin-top: 20px;
+      }
+      #log {
+        background-color: silver;
+
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="column">
+      <h1>Shopping List App</h1>
+
+      <input type="text" id="addItemInput" placeholder="Type a new item..." />
+      <button onclick="addItem()">+</button>
+
+      <div id="commonItems">
+        <p>Common Items:</p>
+        <button onclick="addCommonItem('Milk')">Milk</button>
+        <button onclick="addCommonItem('Bread')">Bread</button>
+        <button onclick="addCommonItem('Eggs')">Eggs</button>
+      </div>
+    </div>
+
+    <div class="column">
+      <h2>Active List</h2>
+      <ul id="shoppingList"></ul>
+    </div>
+
+    <div class="column">
+      <h2>Log</h2>
+      <ul id="log"></ul>
+    </div>
+
+    <script>
+      function addItem() {
+        const input = document.getElementById("addItemInput");
+        const itemText = input.value.trim();
+
+        if (itemText !== "") {
+          const list = document.getElementById("shoppingList");
+          const listItem = document.createElement("li");
+          const timestamp = new Date().toLocaleString();
+          listItem.innerHTML = `${itemText} <button onclick="removeItem(this)">Remove</button>`;
+          list.appendChild(listItem);
+
+          // Clear the input box
+          input.value = "";
+
+          // Log the addition with timestamp
+          logAction(`Added at ${timestamp}: ${itemText}`);
+        }
+      }
+
+      function addCommonItem(item) {
+        const list = document.getElementById("shoppingList");
+        const listItem = document.createElement("li");
+        const timestamp = new Date().toLocaleString();
+        listItem.innerHTML = `${item} <button onclick="removeItem(this)">Remove</button>`;
+        list.appendChild(listItem);
+
+        // Log the addition with timestamp
+        logAction(`Added at ${timestamp}: ${item}`);
+      }
+
+      function removeItem(button) {
+        const listItem = button.parentNode;
+        const list = document.getElementById("shoppingList");
+        const timestamp = new Date().toLocaleString();
+        const itemText = listItem.firstChild.textContent;
+
+        // Remove the item from the active list
+        list.removeChild(listItem);
+
+        // Log the removal with timestamp
+        logAction(`Removed at ${timestamp}: ${itemText}`);
+      }
+
+      function logAction(action) {
+        const log = document.getElementById("log");
+        const logItem = document.createElement("li");
+        logItem.textContent = action;
+        log.appendChild(logItem);
+      }
+    </script>
+  </body>
+</html>
