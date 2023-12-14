@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Page Title</title>
+    <!-- Include your CSS stylesheets or other dependencies here -->
+  </head>
+  <body>
+    <!-- Your HTML content goes here -->
+
+    <div id="hobbiesList">
+      <!-- Your hobbies list will be populated here dynamically -->
+    </div>
+
+    <input type="text" class="hobbiesInput" placeholder="Enter a hobby" />
+    <button id="newHobbyBtn">Add Hobby</button>
+
+    <!-- Include your other HTML elements or structure here -->
+
+    <script>
+      // Your JavaScript code goes here
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("newHobbyBtn")
+          .addEventListener("click", function () {
+            const inputVal = document.querySelector(".hobbiesInput").value;
+            addHobies(inputVal);
+          });
+      });
+
+      function addHobies(inputVal) {
+        const inputList = document.querySelectorAll(".hobbiesInput");
+        const brnode = document.createElement("br");
+
+        if (inputList.length < 5) {
+          let inputElement = document.createElement("input");
+          inputElement.setAttribute("class", "hobbiesInput");
+          inputElement.setAttribute("value", inputVal);
+          const hobbiesList = document.getElementById("hobbiesList");
+          hobbiesList.appendChild(brnode);
+          hobbiesList.appendChild(inputElement);
+        }
+      }
+    </script>
+
+    <!-- Include your other scripts or dependencies here -->
+  </body>
+</html>
