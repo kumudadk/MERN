@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      .error-message {
+        color: red;
+      }
+      .error-border {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <span class="error-message" id="nameError"></span><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <span class="error-message" id="emailError"></span><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <span class="error-message" id="passwordError"></span><br />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+      <span class="error-message" id="phoneError"></span><br />
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required />
+      <span class="error-message" id="dobError"></span><br />
+
+      <input type="submit" value="Submit" id="submitButton" />
+    </form>
+
+    <script>
+      const form = document.getElementById("myForm");
+      const submitButton = document.getElementById("submitButton");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        validateForm();
+      });
+
+      form.addEventListener("input", function (event) {
+        const inputField = event.target;
+        inputField.classList.remove("error-border");
+        const errorElement = document.getElementById(`${inputField.id}Error`);
+        errorElement.textContent = "";
+      });
+
+      function validateForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const phone = document.getElementById("phone").value;
+        const dob = document.getElementById("dob").value;
+
+        validateField(name, "name");
+        validateField(email, "email");
+        validateField(password, "password");
+        validateField(phone, "phone");
+        validateField(dob, "dob");
+      }
+
+      function validateField(value, fieldName) {
+        const errorElement = document.getElementById(`${fieldName}Error`);
+        const inputField = document.getElementById(fieldName);
+
+        switch (fieldName) {
+          case "name":
+            if (value.trim() === "") {
+              displayError(
+                inputField,
+                errorElement,
+                "Name should not be empty."
+              );
+            }
+            break;
+          case "email":
+            const emailRegex = /^[a-zA-Z\s]+$/;
+            if (!emailRegex.test(value.trim()) || value.trim() === "") {
+              displayError(
+                inputField,
+                errorElement,
+                "Invalid email format. Should contain only alphabets and spaces."
+              );
+            }
+            break;
+          case "password":
+            if (value.trim() === "" || value.length < 8) {
+              displayError(
+                inputField,
+                errorElement,
+                "Password should not be empty and should be at least 8 characters long."
+              );
+            }
+            break;
+          case "phone":
+            const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+            if (!phoneRegex.test(value.trim()) || value.trim() === "") {
+              displayError(
+                inputField,
+                errorElement,
+                "Invalid phone number format. Should be in the format (123) 456-7890."
+              );
+            }
+            break;
+          case "dob":
+            if (value.trim() === "") {
+              displayError(
+                inputField,
+                errorElement,
+                "Date of Birth should not be empty."
+              );
+            }
+            break;
+          default:
+            break;
+        }
+      }
+
+      function displayError(inputField, errorElement, message) {
+        inputField.classList.add("error-border");
+        errorElement.textContent = message;
+      }
+    </script>
+  </body>
+</html>

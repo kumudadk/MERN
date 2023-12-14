@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const myInt = parseInt(prompt("Enter an integer"));
+      const myDecimal = parseFloat(prompt("Enter a decimal value"));
+
+      const mynums = [2, 5, 6, 10, 13, -3, 20];
+
+      document.write("Your integer" + myInt);
+      document.write("<hr>");
+      document.write("Math.abs(" + myInt + ")=" + Math.abs(myInt));
+
+      document.write("<hr>");
+      document.write("Your deciaml" + myDecimal);
+      document.write("<hr>");
+
+      document.write(
+        "A circle with radius" +
+          myDecimal +
+          "would have area " +
+          Math.PI * Math.pow(myDecimal, 2)
+      );
+
+      document.write("<hr>");
+
+      document.write(
+        "Math.ceil(" + myDecimal + ")=" + Math.ceil(myDecimal) + "<br>"
+      );
+      document.write(
+        "Math.floor(" + myDecimal + ")=" + Math.floor(myDecimal) + "<br>"
+      );
+      document.write(
+        "Math.round(" + myDecimal + ")=" + Math.round(myDecimal) + "<br>"
+      );
+
+      document.write("<hr>");
+
+      document.write("The numbers array " + mynums + "<br>");
+      document.write("Max number " + Math.max(...mynums) + "<br>");
+      document.write("Min number " + Math.min(...mynums) + "<br>");
+
+      document.write("<hr>");
+
+      function randomInt(low, high) {
+        const rndDec = Math.random();
+
+        const rndInt = Math.floor(rndDec * high + low);
+
+        return rndInt;
+      }
+
+      document.write(
+        "A random number between 1 and" +
+          Math.abs(myInt) +
+          "=" +
+          randomInt(1, Math.abs(myInt))
+      );
+    </script>
+  </body>
+</html>

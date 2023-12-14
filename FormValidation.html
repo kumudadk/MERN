@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="method.php" method="post" onsubmit="return ValidateForm()">
+      <fieldset>
+        <legend>New Form Type</legend>
+        <label for="">Name</label>
+        <input type="text" name="name" id="nameBox" />
+        <br />
+        <label for="">Email</label>
+        <input type="email" name="email" id="emailBox" />
+        <br />
+        <label for="">Mobile</label>
+        <input type="tel" name="mobile" id="mobileBox" maxlength="10" />
+        <br />
+        <input type="submit" value="send" />
+      </fieldset>
+    </form>
+    <script src="FormValidation.js"></script>
+  </body>
+</html>

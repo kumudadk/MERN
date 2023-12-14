@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const now = new Date();
+      const moonLanding1 = new Date("July 21,1969,16:18:00");
+      const moonLanding2 = new Date(1969, 6, 21, 16, 18, 0, 0);
+      const late1969date = new Date(1969, 11, 20, 4, 40, 0, 0);
+
+      document.write("Now :" + now + "<br>");
+      document.write("moonLanding1 :" + moonLanding1 + "<br>");
+      document.write("moonLanding2 :" + moonLanding2 + "<br>");
+      document.write("late1969date :" + late1969date + "<br>");
+
+      document.write("<hr>");
+
+      document.write("now.getDate():" + now.getDate() + "<br>");
+      document.write("now.getDay():" + now.getDay() + "<br>");
+      document.write("now.getMonth():" + now.getMonth() + "<br>");
+
+      document.write("<hr>");
+    </script>
+  </body>
+</html>
