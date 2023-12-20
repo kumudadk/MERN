@@ -66,16 +66,54 @@
 // App.js
 //Another solution using props
 
-import React from "react";
-import MovieList from "./MovieList";
+// import React from "react";
+// import MovieList from "./MovieList";
 
-const App = () => {
-  return (
-    <div>
-      <h1>Netflix Movie List</h1>
-      <MovieList />
-    </div>
-  );
-};
+// const App = () => {
+//   return (
+//     <div>
+//       <h1>Netflix Movie List</h1>
+//       <MovieList />
+//     </div>
+//   );
+// };
+
+// export default App;
+// For usestate hook use this for people.js
+
+// import React from "react";
+// import People from "./People";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <h1>My React App</h1>
+//       <People />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import React from "react";
+// import Form from "./Form";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <h1>My React App</h1>
+//       <Form />
+//     </div>
+//   );
+// }
+
+// export default App;
+import "./App.css";
+
+import TodoMain from "./TodoMain";
+
+function App() {
+  return <TodoMain />;
+}
 
 export default App;
